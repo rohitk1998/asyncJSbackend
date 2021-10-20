@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const dbConnection = () =>
   new Promise((resolve, reject) => {
-    mongoose.connect(`mongodb+srv://root:root@cluster0.v5abc.mongodb.net/JS?retryWrites=true&w=majority`, {
+    mongoose.connect(`mongodb+srv://admin:root@cluster0.gvqxn.mongodb.net/JS?retryWrites=true&w=majority`, {
         useUnifiedTopology: true,
         useFindAndModify: false, 
         useNewUrlParser: true,
