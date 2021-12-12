@@ -1,12 +1,26 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
-   firstname : String , 
-   lastname : String , 
-   active : Boolean ,
-},
-{ timestamps: true });
+const Schema = mongoose.Schema;
 
-const User = mongoose.model("users", userSchema);
+const userSchema = new Schema(
+  {
+    firstname: String,
+    lastname: String,
+    email_id: String,
+    google_id: String,
+    dob:String,
+    is_active: Boolean,
+    is_removed: Boolean,
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "post",
+      },
+    ],
+  },
+  { timestamps: true }
+);
 
-export default User;
+const user = mongoose.model("user", userSchema);
+
+export default user;

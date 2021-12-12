@@ -2,7 +2,7 @@ import express from "express";
 import dbConnection from "./src/db/connection/index";
 import cors from "cors";
 
-import blogroute from "./src/routes/index"
+import { post_route , user_route } from "./src/routes/index";
 
 const startServer = async () => {
   await dbConnection()
@@ -11,7 +11,8 @@ const startServer = async () => {
   const app = express();
   app.use(cors())
   app.use(express.json())
-  app.use(blogroute)
+  app.use(user_route)
+  app.use(post_route)
  
   await new Promise((resolve) => app.listen({ port: 4000 }, resolve));
   console.log(
