@@ -1,10 +1,7 @@
-const express = require('express')
-import { request } from "../controllers/blogController"
+import  post_route  from "./postroute"
+import user_route from "./userroute"
 
-
-const blogroute = express.Router()
-
-blogroute.get('/posts' , request.GetAllPosts)
-blogroute.post('/post' , request.addPost)
-
- export default blogroute ; 
+export { 
+    post_route,
+    user_route
+}
