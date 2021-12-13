@@ -5,13 +5,21 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema(
   {
     post_title: String,
-    post_sub_title: String,
-    post_body: String,
+    post_subtitle: String,
+    post_tumbnail: String,
+    post_body:String,
     post_category: String,
-    published_by: {
+    post_likedby: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "user",
+      },
+    ],
+    post_publishedby: {
       type: Schema.Types.ObjectId,
       ref: "user",
     },
+    status: Boolean,
   },
   { timestamps: true }
 );
