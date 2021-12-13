@@ -16,7 +16,7 @@ const startServer = async () => {
  
   await new Promise((resolve) => app.listen({ port: 4000 }, resolve));
   console.log(
-`🚀 Subscriptions ready at ws://localhost:4000`
+`🚀 Server started at localhost:: 4000 `
   );
   return { app };
 };

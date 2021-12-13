@@ -7,7 +7,6 @@ export const post_request = {
     console.log("req" , req)
     await post.find({} , (err , result)=> {
           return new Promise ((resolve , reject)=> {
-
             return err ? reject(res.json(error)) : resolve(res.json(result))
           })
     })
