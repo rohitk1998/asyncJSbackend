@@ -43,5 +43,15 @@ export const post_request = {
       if (err) res.json({err : err});
        res.json(result.published_by);
     })
+  },
+  getPostByPostID : async(req , res)=> {
+    console.log("req" , req.body , req.params );
+    await post.findById({ _id : (req.params.postid)})
+    .then(result => {
+      return res.json(result)
+    })
+    .catch((error)=>{
+      console.log("error" , error)
+    })
   }
 };
