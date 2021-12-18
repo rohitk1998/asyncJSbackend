@@ -13,8 +13,7 @@ import { post_route , user_route } from "./src/routes/index";
   app.use(express.json())
   app.use(user_route)
   app.use(post_route)
-
-  // start the server listening for requests
+  
 app.listen(process.env.PORT || 4000, 
 	() => console.log("Server is running..."));
 
