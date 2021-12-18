@@ -14,10 +14,12 @@ const startServer = async () => {
   app.use(user_route)
   app.use(post_route)
  
-  await new Promise((resolve) => app.listen({ port: 4000 }, resolve));
+  await new Promise((resolve) => app.listen({ port: process.env.LOCAL_PORT || 4000 }, resolve));
   console.log(
 `🚀 Server started at localhost:: 4000 `
   );
   return { app };
 };
 startServer();
+
+//hello oosaodoasodaosdoaosdoa
